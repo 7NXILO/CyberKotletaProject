@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CyberKotleta{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <div class="container">
+                <h1>
+                    <a href="{{ url_for('index') }}">
+                        <img src="{{ url_for('static', filename='images/logo.jpg') }}" 
+                             alt="CyberKotleta" class="logo">
+                    </a>
+                </h1>
+                <nav>
+                    <a href="{{ url_for('match') }}">Матчи</a>
+                    <a href="{{ url_for('teams') }}">Команды</a>
+                    <a href="{{ url_for('help') }}">Помощь</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- <main class="main-content">
+            <div class="container">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+ -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 CyberKotleta - Боги еды и Боги мажора</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
